@@ -1,0 +1,31 @@
+.card{
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .25rem;
+    gap: .25rem;
+
+}
+
+.form-group:last-child{
+    margin: 0;
+}
+
+.form-group > label{
+    font-weight: bold;
+    font-size: .8em;
+    color: #333;
+}
+
+.form-group > input{
+    border-radius: .25em;
+    border: 1px solid #333;
+    font-size: 1rem;
+    padding: .25em;
+}
