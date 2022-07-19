@@ -3,6 +3,9 @@
     border: 1px solid #333;
     border-radius: .5rem;
     padding: .5rem;
+    max-width: 300px;
+    margin: 0 auto;
+    display: none;
 }
 
 .form-group{
@@ -28,4 +31,15 @@
     border: 1px solid #333;
     font-size: 1rem;
     padding: .25em;
+}
+
+.step-title{
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.card.active{
+    display: block;
 }
