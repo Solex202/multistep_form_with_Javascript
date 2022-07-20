@@ -5,7 +5,11 @@
     padding: .5rem;
     max-width: 300px;
     margin: 0 auto;
-    display: none;
+    /* opacity: 0; */
+    animation: fade  250ms ease-in-out forwards ;
+    /* display: none; */
+
+
 }
 
 .form-group{
@@ -41,5 +45,42 @@
 }
 
 .card.active{
-    display: block;
+    animation: slide 250ms 125ms ease-in-out both;
+}
+
+.hide{
+    display: none;
+}
+
+.multi-step-form{
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(200%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(.75);
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
 }

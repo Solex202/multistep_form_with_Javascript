@@ -18,8 +18,9 @@ multiStepForm.addEventListener("click", e =>{
     }
 
     if(incrementor == null) return
+
     const inputs = [...formSteps[currentStep].querySelectorAll("input")]
-    const allValid = inputs.every(input => input.checkValidity())
+    const allValid = inputs.every(input => input.reportValidity())
     console.log(allValid);
     if(allValid){
         currentStep += incrementor
@@ -27,8 +28,18 @@ multiStepForm.addEventListener("click", e =>{
     }
 })
 
+formSteps.forEach(step =>{
+    step.addEventListener("animationend", e =>{
+        formSteps[currentStep].classList.remove("hide")
+        e.target.classList.toggle("hide", !e.target.classList.contains("active"))
+    })
+})
+
 function showCurrentStep(){
     formSteps.forEach((step, index) =>{
         step.classList.toggle("active", index === currentStep)
+        // if(index === currentStep){
+        //     step.classList.remove("hide")
+        // }
     })
 }
